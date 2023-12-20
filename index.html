@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8" lang="vi" />
+  <meta
+    content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5"
+    name="viewport"
+  />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <script
+    src="https://kit.fontawesome.com/4f3ce16e3e.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <head>
+    <title>Happy Birthday 🎂✨</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <meta name="description" content="Happy Birthday My Love" />
+    <!-- 
+  Made with love by Rayys!
+  
+     Blog: https://www.himang.my.id/
+     Instagram: @Himang_dg
+     TikTok: @Himang_dg
+  Thanks to all <3
+-->
+  </head>
+
+  <body>
+    <!-- Ganti Audio di sini -->
+    <audio src="/hbdfb.mp3" id="linkmp3" class="sembunyi"></audio>
+
+    <div id="bodyblur">
+      <!-- Wallpaper --><img src="/gbr/febry.jpg" id="wallpaper" />
+      <div id="beneranblur"></div>
+    </div>
+
+    <div id="Content">
+      <div id="kadoIn"><!-- Tombol Surat --><img src="/gbr/kado.png" /></div>
+      <p id="ket">Bấm vào Quà tặng!</p>
+
+      <div class="kumpulanstiker">
+        <!-- Stiker untuk Konten -->
+        <img src="/gbr/bunga.gif" id="fotostiker" />
+        <img src="/gbr/pusn.gif" id="fotostiker1" />
+        <img src="/gbr/pandacoklat.gif" id="fotostiker2" />
+        <img src="/gbr/cilukba.gif" id="fotostiker3" />
+        <img src="/gbr/pandakuning.gif" id="fotostiker4" />
+        <img src="/gbr/emawh.gif" id="fotostiker5" />
+
+        <img src="/gbr/pandacoklat.gif" id="fotostiker6" />
+      </div>
+
+      <p id="halo" class="halo"></p>
+
+      <div>
+        <blockquote id="bq" data-text="Any đẹp zai">
+          <p id="kalimat">Có thứ gì đó ở đây!</p>
+
+          <p id="pesan1">Bấm vào 4 chiếc bánh bên dưới!</p>
+          <div id="kolombaru">
+            <li id="lv1">🎂</li>
+            <li id="lv2">🎂</li>
+            <li id="lv3">🎂</li>
+            <li id="lv4">🎂</li>
+          </div>
+
+          <p id="pesan2">Chờ một lát...</p>
+          <!-- Pesan -->
+          <p id="pesan3">Có điều gì đó sắp xảy ra!</p>
+          <p id="pesan4">Happy Birthday,</p>
+          <p id="pesan5" class="gaya2">Sinh nhật lần thứ 19 của bé</p>
+          <p id="pesan6" class="gaya2">
+            Chúc bé luôn mạnh khỏe, trẻ đẹp. Anh mong cho những điều may mắn và
+            tốt lành nhất sẽ đến với bé trong tuổi mới này.
+          </p>
+          <p id="pesan7" class="gaya2">Hãy luôn khỏe mạnh và yêu đời nhé!</p>
+
+          <!-- When click yes button -->
+          <p id="pesan8" class="gaya2">Đùa xíu thôi hehe :v</p>
+
+          <!-- When click No button -->
+          <p id="pesan9" class="gaya2">
+            Chúc mừng sinh nhật người anh yêu, chúc bé tuổi mới với những mong
+            muốn của em sớm thành hiện thực. Love you!🥳🎉
+          </p>
+          <p id="pesan10" class="gaya2">Happy Level Up Day!! 🥳</p>
+
+          <!-- Tombol Lanjut -->
+          <p id="opsL">Click để tiếp tục</p>
+        </blockquote>
+      </div>
+
+      <!-- Tombol Kirim Pesan -->
+      <div id="Tombol"><a id="By">&#128140; Next</a></div>
+
+      <!-- Pesan Tambahan -->
+      <p id="katatambahan" class="sembunyi">
+        Điều đó không xảy ra đâu, hehe 😜
+      </p>
+
+      <!-- Pesan Ditolak -->
+      <div id="pesanditolak">
+        <img id="stikerditolak" src="/gbr/weee.gif" />
+        <p id="kataditolak">Được thôi, nếu bé không muốn, 😜</p>
+      </div>
+    </div>
+
+    <script>
+      const body = document.querySelector("body");
+      const swalst = Swal.mixin({
+        timer: 2300,
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        timerProgressBar: true,
+        imageHeight: 90,
+      });
+      audio = new Audio("" + linkmp3.src);
+      ftganti = 0;
+      fungsi = 0;
+      fungsiAwal = 0;
+      deffotostiker = fotostiker.src;
+
+      function berjatuhan() {
+        const heart = document.createElement("div");
+        heart.className = "fas fa-snowflake";
+        heart.style.left = Math.random() * 90 + "vw";
+        heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+        body.appendChild(heart);
+      }
+      setInterval(function name(params) {
+        var heartArr = document.querySelectorAll(".fa-snowflake");
+        if (heartArr.length > 100) {
+          heartArr[0].remove();
+        }
+      }, 100);
+      Content.style = "opacity:1;margin-top:16vh";
+      const swals = Swal.mixin({
+        allowOutsideClick: false,
+        cancelButtonColor: "#FF0040",
+        imageHeight: 80,
+      });
+
+      document.getElementById("kadoIn").onclick = function () {
+        if (fungsiAwal == 0) {
+          audio.play();
+          fungsiAwal = 1;
+          kadoIn.style =
+            "transition:all .8s ease;transform:scale(10);opacity:0";
+          wallpaper.style = "transform: scale(1.5);";
+          ket.style = "display:none";
+          setTimeout(initengahan, 300);
+          setTimeout(inipesan, 500);
+        }
+      };
+
+      async function inipesan() {
+        var { value: nama } = await swals.fire({
+          title: "Nhập tên của bạn",
+          input: "text",
+        });
+        if (nama && nama.length < 11) {
+          window.nama = nama;
+          vketikhalo = "Hi, " + nama + " ✨";
+          mulainama();
+        } else {
+          await swals.fire(
+            "Ôi!",
+            "Tên không được để trống hoặc dài hơn 10 ký tự!"
+          );
+          inipesan();
+        }
+      }
+
+      //Variable Pertanyaan Akhir
+      var tanya = "Bé có muốn nhận quà hay không? 😶🎁";
+      var opstanya = "Hãy trả lời 😆";
+      var tompositif = "Muốn";
+      var tomnegatif = "Không";
+
+      async function menuju() {
+        pesanwhatsapp = "Cảm ơn vì đã nói điều đó " + nama + " sinh nhật ><";
+        await swals.fire(
+          "OK luôn!",
+          "Anh có một vài điều muốn gửi đến bé!",
+          "Thành công"
+        );
+        window.location = "/card/index.html";
+      }
+    </script>
+    <script src="/script.js"></script>
+    <!-- Sampai Sini -->
+  </body>
+</html>
