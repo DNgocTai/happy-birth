@@ -67,11 +67,24 @@ body::before {
 }
 
 #wallpaper {
-    width: 100%;
     height: 100%;
     transform: scale(2);
     transition: all 1.3s ease;
 }
+
+#wallpaper2 {
+    width: 100%;
+    transform: translateY(-5%);
+}
+
+.display-mb {
+    display: none ;
+}
+
+.display-pc {
+    display: block;
+}
+
 
 #beneranblur {
     position: fixed;
@@ -536,4 +549,15 @@ blockquote>#opsL {
 #kado2,
 #kado3 {
     display: none !important
+}
+
+@media screen and (max-width: 768px) {
+    
+.display-mb {
+    display: block ;
+}
+
+.display-pc {
+    display: none;
+}
 }
